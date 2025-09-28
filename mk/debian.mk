@@ -15,7 +15,7 @@ DISTRO_CFLAGS := -D_DEFAULT_SOURCE \
   -Wformat-signedness -fdiagnostics-color \
   $(SSL_CFLAGS) $(PNG_CFLAGS) $(GLIB_CFLAGS)
 
-DISTRO_LDFLAGS := -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack -Wl,--as-needed -pie \
+DISTRO_LDFLAGS := -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack -Wl,--as-needed -Wl,--gc-sections -pie \
   $(SSL_LIBS) $(PNG_LIBS) $(GLIB_LIBS)
 
 DEV_PACKAGES := build-essential libssl-dev libpng-dev libglib2.0-dev pkg-config cppcheck
